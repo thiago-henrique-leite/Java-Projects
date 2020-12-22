@@ -1,4 +1,4 @@
-package Java_Projects.estrutura_de_dados;
+package JavaProjects.estrutura_de_dados;
 
 public class No {
 	private int key;

@@ -1,4 +1,4 @@
-package Java_Projects.estrutura_de_dados;
+package JavaProjects.estrutura_de_dados;
 
 public class Lista {
 	protected No first;
@@ -25,11 +25,11 @@ public class Lista {
 		setFirst(null); setLast(null); setLength(0);
 	}
 	
-	protected boolean isEmpty() {
+	public boolean isEmpty() {
 		return (first == null) ? true : false;
 	}
 	
-	private void addFirst(int key) {
+	public void addFirst(int key) {
 		No novo = new No(key);
 		
 		if(isEmpty())
@@ -41,7 +41,7 @@ public class Lista {
 		length+=1;
 	}
 	
-	private void addLast(int key) {
+	public void addLast(int key) {
 		No novo = new No(key);
 		
 		this.last.setNext(novo);
@@ -53,25 +53,20 @@ public class Lista {
 		No novo = new No(key);
 		No no = first;
 		
-		if(validPosition(pos)) {
-			if(pos == 1 || isEmpty())
-				addFirst(key);
-			else if(pos-1 == length) 
-				addLast(key);
-			else {
-				for(int i=1; i<pos-1; i++)
-					no = no.getNext();
-				novo.setNext(no.getNext());
-				no.setNext(novo);
-				length+=1;
-			} 
-		} else {
-			System.out.printf("\nPosição %d inválida, chave %d não foi inserida.\n", pos, key);
-			System.out.printf("\nPosição deve estar entre (1..%d)\n", length);
+		if(pos == 1 || isEmpty())
+			addFirst(key);
+		else if(pos-1 == length) 
+			addLast(key);
+		else {
+			for(int i=1; i<pos-1; i++)
+				no = no.getNext();
+			novo.setNext(no.getNext());
+			no.setNext(novo);
+			length+=1;
 		}
 	}
 	
-	private void removeFirst() {		
+	public void removeFirst() {		
 		No no = getFirst();
 		
 		if(no == last) { setLast(null); }
@@ -81,7 +76,7 @@ public class Lista {
 		length-=1;
 	}
 	
-	private void removeLast() {
+	public void removeLast() {
 		No last = getLast();
 		No ant = getFirst();
 		
@@ -145,61 +140,7 @@ public class Lista {
 		System.out.printf("\nTamanho: %d\n", this.length);
 	}
 	
-	private boolean validPosition(int pos) {
+	public boolean validPosition(int pos) {
 		return (pos>0 && pos<=this.length+1) ? true : false;	
-	}
-	
-	public void lineBreak() {
-		System.out.println("______________________________________________________");
-	}
-	
-	public static void main(String args[]) {
-		Lista lista = new Lista();
-		Pilha pilha  = new Pilha();
-		Fila fila = new Fila();
-		
-		lista.initiate();
-		pilha.initiate();
-		fila.initiate();
-		
-		pilha.lineBreak();
-		System.out.println("[PILHA]");
-		pilha.add(1);
-		pilha.add(2);
-		pilha.add(3);
-		pilha.add(4);
-		pilha.remove();
-		pilha.remove();
-		pilha.remove();
-		pilha.add(61);
-		pilha.print();
-		fila.search(61);
-		
-		fila.lineBreak();
-		System.out.println("\n[FILA]");
-		fila.add(1);
-		fila.add(2);
-		fila.add(3);
-		fila.remove();
-		fila.add(6);
-		fila.remove();
-		fila.add(7);
-		fila.remove();
-		fila.add(8);
-		fila.print();
-		fila.search(3);
-		
-		lista.lineBreak();
-		System.out.println("\n[LISTA]");
-		lista.add(1, 1);
-		lista.add(2, 1);
-		lista.add(7, 3);
-		lista.add(10, 2);
-		lista.remove(2);
-		lista.remove(7);
-		lista.add(52, 2);
-		lista.add(60, 5);
-		lista.print();
-		lista.search(2);
 	}
 }

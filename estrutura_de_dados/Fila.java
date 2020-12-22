@@ -1,4 +1,4 @@
-package Java_Projects.estrutura_de_dados;
+package JavaProjects.estrutura_de_dados;
 
 public class Fila extends Lista {
 	public Fila() {
@@ -20,15 +20,13 @@ public class Fila extends Lista {
 	public int remove() {		
 		No no = getFirst();
 		
-		if(isEmpty()) 
-			return 0;
+		if(isEmpty()) { return 0; }
 		
 		if(no == last) { setLast(null); }
 		
 		setFirst(no.getNext());
 		no = null;
 		length-=1;
-		
 		return 1;
 	}
 }
