@@ -2,7 +2,7 @@
 
 ## Motivação
 
-- PigLatin é um jogo de linguagem que consiste em pegar uma palavra em inglẽs, colocar sua primeira letra no final, e acrescentar o sufixo 'ay'. Por exemplo, `beautiful` em PigLatin seria `eautifulbay`. Este jogo de linguagem pode ser usado como uma maneira de criptografia.
+- PigLatin é um jogo de linguagem que consiste em pegar uma palavra em inglês, colocar sua primeira letra no final, e acrescentar o sufixo 'ay'. Por exemplo, `beautiful` em PigLatin seria `eautifulbay`. Este jogo de linguagem pode ser usado como uma maneira de criptografia.
 
 ## Entrada
 
